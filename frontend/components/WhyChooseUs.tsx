@@ -1,8 +1,15 @@
 "use client"
 
 import Image from "next/image"
+import type { ReactNode } from "react"
 
-function FeatureCard({ icon, title, desc }) {
+type FeatureCardProps = {
+  icon: ReactNode
+  title: string
+  desc: string
+}
+
+function FeatureCard({ icon, title, desc }: FeatureCardProps) {
   return (
     <div className="text-center space-y-3">
       <div className="text-3xl text-primary">{icon}</div>
@@ -15,10 +22,7 @@ function FeatureCard({ icon, title, desc }) {
 export default function WhyChooseUs() {
   return (
     <section className="bg-black py-24 px-6 flex justify-center">
-
       <div className="relative bg-[#111] rounded-3xl max-w-6xl w-full p-10 md:p-16 shadow-2xl">
-
-        {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Why Choose <span className="text-primary">Music Mania?</span>
@@ -29,10 +33,7 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid lg:grid-cols-3 gap-12 items-center ">
-
-          {/* LEFT */}
           <div className="space-y-12">
             <FeatureCard
               icon="🎤"
@@ -46,10 +47,7 @@ export default function WhyChooseUs() {
             />
           </div>
 
-          {/* CENTER IMAGE WITH BACK LAYER */}
           <div className="relative flex justify-center">
-
-            {/* Back Offset Layer */}
             <div className="absolute w-[260px] h-[340px] bg-yellow-400/30 shadow-2xl rounded-2xl translate-x-6 translate-y-6 blur-xl"></div>
 
             <Image
@@ -61,7 +59,6 @@ export default function WhyChooseUs() {
             />
           </div>
 
-          {/* RIGHT */}
           <div className="space-y-12">
             <FeatureCard
               icon="🎶"
@@ -74,16 +71,13 @@ export default function WhyChooseUs() {
               desc="Practice studio, digital tools, competitions and career guidance."
             />
           </div>
-
         </div>
 
-        {/* Button */}
         <div className="text-center mt-16">
           <button className="bg-primary text-black px-8 py-3 rounded-full font-semibold hover:scale-105 transition shadow-lg shadow-yellow-500/30">
             Join Music Mania Today
           </button>
         </div>
-
       </div>
     </section>
   )
