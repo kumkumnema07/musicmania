@@ -29,8 +29,8 @@ export default function Virar() {
       <BranchLocation branchName={branch.name} mapSrc={branch.mapSrc} />
       <BranchAddress
         branchName="Virar"
-        address="Music Mania School of Music, 2nd Floor, XYZ Building, Near Station Road, Virar West, Mumbai - 401303"
-        phone="+91 9876543210"
+        address="Shop no F 18, Global City, Agarwal Paramount, Rustomjee Global City, Virar West, Mumbai, Maharashtra 401303"
+        phone="+91 7415555535"
       />
       <AboutBlock
         title="About Music Champs"

@@ -28,8 +28,7 @@ export default function WhyChooseUs() {
             Why Choose <span className="text-primary">Music Mania?</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl text-lg mx-auto">
-            From structured training to live stage performances,
-            we help aspiring artists transform passion into performance.
+           We aim to cultivate a lifelong love of music in each of our students, empowering them to explore their creativity and discover their unique musical voice.
           </p>
         </div>
 
@@ -37,13 +36,13 @@ export default function WhyChooseUs() {
           <div className="space-y-12">
             <FeatureCard
               icon="🎤"
-              title="Certified Mentors"
-              desc="Learn from experienced vocalists and instrumentalists with structured curriculum."
+              title="Experienced Instructors"
+              desc="Led by the highly skilled Abhishek Sir, our teaching team is dedicated to providing professional, tailored instruction that meets each student’s needs.."
             />
             <FeatureCard
               icon="⚡"
-              title="Fast Skill Growth"
-              desc="Personalized 1:1 live sessions that accelerate your learning journey."
+              title="Wide Range of Classes"
+              desc="From guitar to singing and keyboard, we offer comprehensive lessons designed for beginners, intermediate learners, and advanced students alike."
             />
           </div>
 
@@ -62,8 +61,8 @@ export default function WhyChooseUs() {
           <div className="space-y-12">
             <FeatureCard
               icon="🎶"
-              title="Real Stage Exposure"
-              desc="Perform in live events and masterclasses to build confidence."
+              title="Personalized Learning"
+              desc="At Music Mania, we understand that every student is unique. That's why we focus on creating customized lesson plans that fit your learning style, pace, and musical goals."
             />
             <FeatureCard
               icon="🚀"

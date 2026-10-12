@@ -29,7 +29,7 @@ app.use("/api", testimonialRoutes);
 app.use("/api", admissionRoutes);
 app.use("/api", blogRoutes);
 app.use("/api", ctaRoutes);
-app.use("/api/policies", policyRoutes);
+app.use("/api/policy", policyRoutes);
 
 app.use("/api/app-config", appConfigRoutes);
 app.use("/api", subscriberRoutes);

@@ -50,45 +50,43 @@ export default function CoursesSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {courses.map((course) => (
           <div
-  key={course.id}
-  className="group relative rounded-2xl p-[2px] 
+            key={course.id}
+            className="group relative rounded-2xl p-[2px] 
   bg-gradient-to-r from- via-purple-500 to-blue-500 
   hover:shadow-[0_0_20px_#ec4899] transition duration-300"
->
-  {/* Inner Card */}
-  <div className="bg-[#111] rounded-2xl p-6 h-full">
+          >
+            {/* Inner Card */}
+            <div className="bg-[#111] rounded-2xl p-6 h-full">
+              <Image
+                src={course.image ? course.image : "/default.jpg"}
+                alt={course.title}
+                width={500}
+                height={375}
+                className="rounded-xl aspect-[4/3] mb-4 h-60 w-full object-contain"
+              />
 
-    <Image
-      src={course.image ? course.image : "/default.jpg"}
-      alt={course.title}
-      width={500}
-      height={375}
-      className="rounded-xl aspect-[4/3] mb-4 h-60 w-full object-contain"
-    />
+              <h3 className="text-xl font-bold text-white text-center">
+                {course.title}
+              </h3>
 
-    <h3 className="text-xl font-bold text-white text-center">
-      {course.title}
-    </h3>
+              <p className="text-gray-400 mt-2 text-sm text-center">
+                {course.description}
+              </p>
 
-    <p className="text-gray-400 mt-2 text-sm text-center">
-      {course.description}
-    </p>
-
-    {course.pdf && (
-      <div className="mt-4 flex justify-center">
-        <a
-          href={course.pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-primary text-black px-5 py-2 rounded-full font-semibold hover:opacity-90 transition"
-        >
-          Start Now
-        </a>
-      </div>
-    )}
-
-  </div>
-</div>
+              {course.pdf && (
+                <div className="mt-4 flex justify-center">
+                  <a
+                    href={course.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary text-black px-5 py-2 rounded-full font-semibold hover:opacity-90 transition"
+                  >
+                    Start Now
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </section>

@@ -13,6 +13,16 @@ export const findUserByEmail = (email) => {
   });
 };
 
+// export const findUserById = (id) => {
+//   return new Promise((resolve, reject) => {
+//     db.query("SELECT * FROM users WHERE id = ?", [id], (err, result) => {
+//       if (err) return reject(err);
+//       resolve(result[0]);
+//     });
+//   });
+// };
+
+
 export const createUser = (user) => {
   return new Promise((resolve, reject) => {
 
@@ -32,5 +42,17 @@ export const createUser = (user) => {
       }
     );
 
+  });
+};
+export const findUserById = (id) => {
+  return new Promise((resolve, reject) => {
+    db.query(
+      "SELECT id, name, email FROM users WHERE id = ?",
+      [id],
+      (err, result) => {
+        if (err) return reject(err);
+        resolve(result[0]);
+      }
+    );
   });
 };

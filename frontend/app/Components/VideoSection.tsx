@@ -14,21 +14,21 @@ export default function VideoSection() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <HeroVideoDialog
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/ScMzIvxBSi4"
+          videoSrc="https://www.youtube.com/embed/-ywCjDn9Yig"
           thumbnailSrc="https://images.unsplash.com/photo-1506157786151-b8491531f063"
           thumbnailAlt="Concert"
         />
 
         <HeroVideoDialog
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/ysz5S6PUM-U"
+          videoSrc="https://www.youtube.com/embed/pnhz7LJ3Rlw"
           thumbnailSrc="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc"
           thumbnailAlt="Studio"
         />
 
         <HeroVideoDialog
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          videoSrc="hhttps://www.youtube.com/embed/2wZjWvkMy5o"
           thumbnailSrc="https://images.unsplash.com/photo-1511379938547-c1f69419868d"
           thumbnailAlt="Music"
         />

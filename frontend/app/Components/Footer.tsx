@@ -68,10 +68,10 @@ fetchConfig();
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/privacy policy">privacy policy</Link>
+               <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/gallery">Terms & Condition</Link>
+              <Link href="/terms-and-conditions">Terms & Conditions</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>

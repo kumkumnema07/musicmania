@@ -1,7 +1,8 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-import { findUserByEmail, createUser } from "../models/auth.model.js";
+import { findUserByEmail, createUser, findUserById } from "../models/auth.model.js";
+
 
 
 // REGISTER USER
@@ -65,6 +66,8 @@ export const login = async (req, res) => {
       });
     }
 
+    console.log("JWT_SECRET:", process.env.JWT_SECRET);
+
     const user = await findUserByEmail(email);
 
     if (!user) {
@@ -118,9 +121,22 @@ export const logout = async (req, res) => {
   });
 
 };
-
-export default {
-  register,
-  login,
-  logout
+export const getProfile = async (req, res) => {
+  try {
+    const user = await findUserById(req.user.id);
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.json({
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        avatar: user.avatar || null,
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
 };
+
+export default { register, login, logout, getProfile };
+

@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import axios from "axios";
+import { saveToken } from "~/utils/auth";
 
 export default function SigninForm() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const [message, setMessage] = useState<{
     type: "error" | "success";
@@ -30,25 +35,29 @@ export default function SigninForm() {
       });
     }
 
+    setLoading(true);
+
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password }
       );
 
       const token = res?.data?.token;
-
       if (!token) throw new Error("Token not received");
 
-      localStorage.setItem("authToken", token);
+      // ✅ auth.ts ka saveToken use karo — consistent key
+      saveToken(token);
 
       setMessage({
         type: "success",
         text: "Login successful!",
       });
 
-      // 🔥 HARD REDIRECT (fix hydration + routing issue)
-      window.location.href = "/admin/dashboard";
+      // ✅ React Router navigate — no hard reload
+      setTimeout(() => {
+        navigate("/admin/dashboard");
+      }, 500);
 
     } catch (err: any) {
       setMessage({
@@ -58,6 +67,8 @@ export default function SigninForm() {
           err?.message ||
           "Login failed",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -101,12 +112,16 @@ export default function SigninForm() {
           className="w-full p-2 mb-4 border rounded bg-white dark:bg-gray-800 text-black dark:text-white"
         />
 
-        <button className="w-full bg-black text-white py-2 rounded hover:opacity-90">
-          Sign In
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-black text-white py-2 rounded hover:opacity-90 disabled:opacity-50"
+        >
+          {loading ? "Signing in..." : "Sign In"}
         </button>
 
         <p className="text-sm text-center mt-4 text-black dark:text-white">
-          Don’t have an account?{" "}
+          Don't have an account?{" "}
           <Link to="/sign-up" className="text-blue-500">
             Sign Up
           </Link>
@@ -115,6 +130,7 @@ export default function SigninForm() {
     </div>
   );
 }
+
 
 
 

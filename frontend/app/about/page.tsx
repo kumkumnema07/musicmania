@@ -20,13 +20,7 @@ export default function about() {
       <CourseSlider />
       <AboutBlock
         title="About Music Champs"
-        description="MusicChamps is an online platform...Music Mania School of Music in Virar is here to help you turn your musical dreams into reality.
-                Music Mania School of Music in Virar is here to help you turn your musical dreams into reality
-                Music Mania School of Music in Virar is here to help you turn your musical dreams into realityMusic Mania School of Music in Virar is here to help you turn your musical dreams into reality.
-                Music Mania School of Music in Virar is here to help you turn your musical dreams into reality
-                Music Mania School of Music in Virar is here to help you turn your musical dreams into realityMusic Mania School of Music in Virar is here to help you turn your musical dreams into reality.
-                Music Mania School of Music in Virar is here to help you turn your musical dreams into reality
-                Music Mania School of Music in Virar is here to help you turn your musical dreams into reality"
+        description="At Music Mania School of Music, we believe in the transformative power of music. Founded with a passion for nurturing musical talent, we provide top-quality music education that inspires, motivates, and brings out the best in every student. Whether you’re dreaming of playing the guitar, perfecting your singing, or mastering the keyboard, our personalized approach helps you achieve your musical goals."
         image1="/logo/musiclogo/guitar.jpg"
         image2="/logo/musiclogo/guitar.jpg"
       />

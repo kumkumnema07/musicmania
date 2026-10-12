@@ -1,12 +1,10 @@
 import axios from "axios";
+import { getToken } from "~/utils/auth";
 
-// ❗ HARD FIX (env छोड़ो अभी)
-const API = import.meta.env.VITE_API_URL;
+const API = `${import.meta.env.VITE_API_URL}/api`;
 
-// TOKEN HEADER
 const getAuthHeader = () => {
-  const token = localStorage.getItem("authToken");
-
+  const token = getToken();
   return {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -14,30 +12,20 @@ const getAuthHeader = () => {
   };
 };
 
-// CREATE
-export const createCourse = (data: FormData) => {
-  return axios.post(`${API}/courses`, data, getAuthHeader());
-};
+export const createCourse = (data: FormData) =>
+  axios.post(`${API}/courses`, data, getAuthHeader());
 
-// GET ALL
-export const getCourses = () => {
-  return axios.get(`${API}/courses`);
-};
+export const getCourses = () =>
+  axios.get(`${API}/courses`);
 
-// GET BY ID
-export const getCourseById = (id: string) => {
-  return axios.get(`${API}/courses/${id}`);
-};
+export const getCourseById = (id: string) =>
+  axios.get(`${API}/courses/${id}`);
 
-// UPDATE
-export const updateCourse = (id: string, data: FormData) => {
-  return axios.put(`${API}/courses/${id}`, data, getAuthHeader());
-};
+export const updateCourse = (id: string, data: FormData) =>
+  axios.put(`${API}/courses/${id}`, data, getAuthHeader());
 
-// DELETE
-export const deleteCourse = (id: string) => {
-  return axios.delete(`${API}/courses/${id}`, getAuthHeader());
-};
+export const deleteCourse = (id: string) =>
+  axios.delete(`${API}/courses/${id}`, getAuthHeader());
 
 
 

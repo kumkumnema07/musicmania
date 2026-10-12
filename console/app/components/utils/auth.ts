@@ -3,14 +3,18 @@
 // Save token securely
 export const saveToken = (token: string) => {
     if (typeof window === "undefined") return;
-    localStorage.setItem("authToken", token);
+    localStorage.setItem("token", token);
 };
 
 // Get Token
-export const getToken = (): string | null => {
-    if (typeof window === "undefined") return null;
-    return localStorage.getItem("authToken");
+export const getToken = () => {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("token"); // "authToken" nahi
 };
+// export const getToken = (): string | null => {
+//     if (typeof window === "undefined") return null;
+//     return localStorage.getItem("authToken");
+// };
 
 // Remove token
 export const removeToken = () => {

@@ -74,7 +74,7 @@ export default function PolicyForm() {
               onChange={(e) => (window.location.href = `/admin/policy/create/${e.target.value}`)}
             >
               <option value="">Select</option>
-              <option value="privacy">Privacy Policy</option>
+              <option value="privacy">Privacy-Policy</option>
               <option value="terms">Terms & Conditions</option>
             </select>
           </div>
